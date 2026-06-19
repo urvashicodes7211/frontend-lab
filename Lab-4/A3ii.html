@@ -16,9 +16,10 @@
 <body>
     <script>
         let n = parseInt(prompt("Enter n : "));
-        for(let i=1;i<=n;i++){
-            for(let j=1;j<=i;j++){
-                document.write("*");
+        
+        for(i = 5; i >= 1; i--){
+            for(j = i; j >= 1; j--){
+                document.write(j);
             }
             document.write("<br/>");
         }
