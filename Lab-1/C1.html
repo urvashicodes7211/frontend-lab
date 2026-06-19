@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urvashi Zinzuvadiya | Portfolio</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:black;
+            color:white;
+            line-height:1.6;
+        }
+
+        nav{
+            background:#111;
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+        }
+
+        nav h2{
+            color:#00ffff;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:20px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00ffff;
+        }
+
+        .hero{
+            height:90vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:20px;
+        }
+
+        .hero h1{
+            font-size:50px;
+            color:#00ffff;
+        }
+
+        .hero p{
+            font-size:20px;
+            margin-top:10px;
+        }
+
+        .btn{
+            margin-top:20px;
+            padding:12px 25px;
+            background:#00ffff;
+            color:black;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+        }
+
+        section{
+            padding:60px 10%;
+        }
+
+        h2{
+            text-align:center;
+            color:#00ffff;
+            margin-bottom:30px;
+        }
+
+        .card-container{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .card{
+            background:#111;
+            padding:20px;
+            width:250px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow:0 0 10px #00ffff;
+        }
+
+        .contact{
+            text-align:center;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#111;
+            margin-top:30px;
+        }
+
+        @media(max-width:768px){
+            nav{
+                flex-direction:column;
+            }
+
+            nav ul{
+                margin-top:10px;
+            }
+
+            .hero h1{
+                font-size:35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Urvashi</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Hi, I'm Urvashi Zinzuvadiya</h1>
+        <p>Computer Engineering Student & Front-End Developer</p>
+
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p style="text-align:center;">
+            I am a Computer Engineering student passionate about
+            Web Development. I have knowledge of HTML, CSS,
+            JavaScript, ReactJS, Java, C Programming and SQL.
+            I enjoy creating responsive and user-friendly websites.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="card-container">
+            <div class="card">HTML</div>
+            <div class="card">CSS</div>
+            <div class="card">JavaScript</div>
+            <div class="card">ReactJS</div>
+            <div class="card">Bootstrap</div>
+            <div class="card">Java</div>
+            <div class="card">C Programming</div>
+            <div class="card">SQL</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Incredible India</h3>
+                <p>Tourism Website using HTML & CSS</p>
+            </div>
+
+            <div class="card">
+                <h3>Office Automation</h3>
+                <p>MS Word, Excel & PowerPoint Lab Work</p>
+            </div>
+
+            <div class="card">
+                <h3>DS Lab</h3>
+                <p>Data Structure Programs in C</p>
+            </div>
+
+            <div class="card">
+                <h3>T-SQL Lab</h3>
+                <p>Database Queries and SQL Operations</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <div class="contact">
+            <p>Email: urvashi@example.com</p>
+            <p>GitHub: github.com/urvashi7211-prog</p>
+            <p>LinkedIn: linkedin.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Urvashi Zinzuvadiya | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
