@@ -1,0 +1,23 @@
+<!-- Write a JavaScript that uses a loop that searches a word in sentence held in an array, returning the index of the
+word. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = prompt("Enter s : ");
+        let a = s.split("");
+        let c = prompt("Enter char : ");
+        for(let i=0;i<a.length;i++){
+            if(a[i] == c){
+                document.write(i);
+            }
+        }
+    </script>
+</body>
+</html>
