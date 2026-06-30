@@ -1,0 +1,123 @@
+<!-- WAP to display students stored in array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        students = [
+    {
+        rollNo: 101,
+        name: "Aarav Patel",
+        course: "B.Tech CSE",
+        year: "1st Year",
+        email: "aarav.patel@student.edu",
+        phone: "9876543210"
+    },
+    {
+        rollNo: 102,
+        name: "Diya Shah",
+        course: "B.Tech IT",
+        year: "2nd Year",
+        email: "diya.shah@student.edu",
+        phone: "9876543211"
+    },
+    {
+        rollNo: 103,
+        name: "Vivaan Mehta",
+        course: "BCA",
+        year: "3rd Year",
+        email: "vivaan.mehta@student.edu",
+        phone: "9876543212"
+    },
+    {
+        rollNo: 104,
+        name: "Ananya Desai",
+        course: "B.Sc CS",
+        year: "1st Year",
+        email: "ananya.desai@student.edu",
+        phone: "9876543213"
+    },
+    {
+        rollNo: 105,
+        name: "Krish Patel",
+        course: "B.Tech AI",
+        year: "2nd Year",
+        email: "krish.patel@student.edu",
+        phone: "9876543214"
+    },
+    {
+        rollNo: 106,
+        name: "Riya Joshi",
+        course: "BCA",
+        year: "3rd Year",
+        email: "riya.joshi@student.edu",
+        phone: "9876543215"
+    },
+    {
+        rollNo: 107,
+        name: "Yash Modi",
+        course: "B.Tech CE",
+        year: "4th Year",
+        email: "yash.modi@student.edu",
+        phone: "9876543216"
+    },
+    {
+        rollNo: 108,
+        name: "Nidhi Trivedi",
+        course: "B.Sc IT",
+        year: "2nd Year",
+        email: "nidhi.trivedi@student.edu",
+        phone: "9876543217"
+    },
+    {
+        rollNo: 109,
+        name: "Harsh Pandya",
+        course: "B.Tech ME",
+        year: "3rd Year",
+        email: "harsh.pandya@student.edu",
+        phone: "9876543218"
+    },
+    {
+        rollNo: 110,
+        name: "Sneha Bhatt",
+        course: "B.Tech EC",
+        year: "1st Year",
+        email: "sneha.bhatt@student.edu",
+        phone: "9876543219"
+    }
+];
+
+    document.write("<table border='1'>");
+    
+            document.write("<tr>");
+                document.write("<th>rollNo<th/>");
+                document.write("<th>name<th/>");
+                document.write("<th>course<th/>");
+                document.write("<th>year<th/>");
+                document.write("<th>email<th/>");
+                document.write("<th>phone<th/>");
+
+            document.write("<tr/>");
+            
+            for(let i=0;i<students.length;i++){
+                document.write("<tr>");
+                    document.write("<td>"+students[i].rollNo+"<td/>");
+                    document.write("<td>"+students[i].name+"<td/>");
+                    document.write("<td>"+students[i].course+"<td/>");
+                    document.write("<td>"+students[i].year+"<td/>");
+                    document.write("<td>"+students[i].email+"<td/>");
+                    document.write("<td>"+students[i].phone+"<td/>");
+
+
+                    
+                document.write("<tr/>");
+                
+            }
+        document.write("<table/>");
+    </script>
+</body>
+</html>
