@@ -1,0 +1,52 @@
+<!-- WAP to create a static login page using HTML and JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;   
+            align-items: center;       
+        }
+        .main{
+            height: 30vh;
+            width: 17vw;
+            border: 1px solid black;
+            border-radius: 7px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Login</h1>
+        <label for="">Email : </label>
+        <br>
+        <input type="email" id="email">
+        <br><br>
+        <label for="">Password : </label>
+        <br>
+        <input type="password" id="password">
+        <br><br>
+        <input type="submit" value="submit" onclick="login()">
+    </div>
+    <script>
+         function login(){
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if(email == "" || password == ""){
+                alert("Please fill all fields.");
+            }else{
+                alert("Login Successful!");
+            }
+        }
+    </script>
+</body>
+</html>
