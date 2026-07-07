@@ -1,0 +1,42 @@
+<!-- WAP to recognize which mouse event is ƒired. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello">Hello</h1>
+    <p id="p1">JavaScript</p>
+    <p id="p2">HTML</p>
+    <p id="p3">CSS</p>
+    <p id="p4">JAVA</p>
+    <p id="p5">PYTHON</p>
+
+    <script>
+        document.getElementById("hello").addEventListener("mouseover",function(){
+            document.getElementById("hello").style.color="green";
+        });
+        document.getElementById("hello").addEventListener("mouseout",function(){
+            document.getElementById("hello").style.color="black";
+        });
+        document.getElementById("p1").addEventListener("mouseup",function(){
+            document.getElementById("p1").style.color="pink";
+        });
+        document.getElementById("p2").addEventListener("mouseenter",function(){
+            document.getElementById("p2").style.color="gray";
+        });
+        document.getElementById("p3").addEventListener("mouseleave",function(){
+            document.getElementById("p3").style.color="orange";
+        });
+        document.getElementById("p4").addEventListener("mousemove",function(){
+            document.getElementById("p4").style.color="blue";
+        });
+        document.getElementById("p5").addEventListener("mousedown",function(){
+            document.getElementById("p5").style.color="yellow";
+        });
+        
+    </script>
+</body>
+</html>
