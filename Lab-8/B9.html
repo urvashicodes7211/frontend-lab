@@ -1,0 +1,27 @@
+<!-- Write a JavaScript that handles following mouse events. Add necessary elements. (B) 
+JavaScript gives the key code for the key pressed. 
+If the key pressed is “a”,”e”,”i”,”o”,”u”, the script should announce that vowel is pressed. 
+When the key is released background should change to blue. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="color">
+    <h2 id="msg"></h2>
+    <input type="text" id="txt">
+    <script>
+        document.getElementById("txt").addEventListener("keypress",function(e){
+            if(e.key == 'A' || e.key == 'E' || e.key == 'I' ||e.key == 'O' ||e.key == 'U' ||e.key == 'a' ||e.key == 'e' ||e.key == 'i' ||e.key == 'o' ||e.key == 'u' ){
+                document.getElementById("msg").innerHTML = e.key + " pressed";
+                document.getElementById("color").style.backgroundColor = "pink";
+            }else{
+                document.getElementById("msg").innerHTML = "";
+            }
+        });
+    </script>
+</body>
+</html>
