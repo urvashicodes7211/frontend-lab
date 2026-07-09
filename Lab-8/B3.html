@@ -7,18 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h2 id="msg"></h2>
     <input type="text" id="txt">
+
     <script>
         document.getElementById("txt").addEventListener("keypress",function(){
             document.getElementById("msg").innerHTML = "keypress";
         });
+
         document.getElementById("txt").addEventListener("keyup",function(){
             document.getElementById("msg").innerHTML = "keyup";
         });
+
         document.getElementById("txt").addEventListener("keydown",function(){
-            document.getElementById("msg").innerHTML = "keypdown";
+            document.getElementById("msg").innerHTML = "keydown";
         });
+
     </script>
 </body>
 </html>
