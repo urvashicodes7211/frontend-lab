@@ -1,0 +1,36 @@
+<!-- WAP to demonstrate change in properties of HTML element using JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change HTML Element Properties</title>
+</head>
+<body>
+
+    <h1 id="text">Hello World!</h1>
+    <p class="p1">Class</p>
+    <!-- <button onclick="changeProperties()">Change Properties</button> -->
+
+    <script>
+        let changestyle = document.getElementById("text");
+
+        changestyle.style.backgroundColor= "green";
+        changestyle.style.color = "white";
+        changestyle.style.fontSize = "40px";
+        changestyle.style.border = "2px solid black";
+        changestyle.style.width = "15vw";
+        changestyle.innerHTML = "hello world ! ";
+
+        let i1 = document.getElementById("text").id="t1";
+        document.write("id changed : "+i1);
+
+        document.write("<br/>");
+        
+        let p = document.querySelector(".p1").className="p2";
+        document.write("class name changed : "+p);
+        
+        
+    </script>
+
+</body>
+</html>
