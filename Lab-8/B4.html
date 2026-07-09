@@ -1,0 +1,48 @@
+<!--  WAP to recognize which form event is ƒired. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Events</title>
+</head>
+<body>
+
+    <h2 id="msg"></h2>
+
+    <form id="myForm">
+        Name:
+        <input type="text" id="txt"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        let msg = document.getElementById("msg");
+        let txt = document.getElementById("txt");
+        let form = document.getElementById("myForm");
+
+        txt.onfocus = function () {
+            msg.innerHTML = "Focus Event Fired";
+        };
+
+        txt.onblur = function () {
+            msg.innerHTML = "Blur Event Fired";
+        };
+
+        txt.onchange = function () {
+            msg.innerHTML = "Change Event Fired";
+        };
+
+        form.onsubmit = function (event) {
+            event.preventDefault();
+            msg.innerHTML = "Submit Event Fired";
+        };
+
+        form.onreset = function () {
+            msg.innerHTML = "Reset Event Fired";
+        };
+    </script>
+
+</body>
+</html>
