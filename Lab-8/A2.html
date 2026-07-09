@@ -8,11 +8,15 @@
 </head>
 <body>
     <h1 id="hello">Hello</h1>
+
     <p id="p1">JavaScript</p>
     <p id="p2">HTML</p>
     <p id="p3">CSS</p>
     <p id="p4">JAVA</p>
     <p id="p5">PYTHON</p>
+
+    <button id="clk">click</button>
+    <button id="dclk">Double click</button>
 
     <script>
         document.getElementById("hello").addEventListener("mouseover",function(){
@@ -36,6 +40,13 @@
         document.getElementById("p5").addEventListener("mousedown",function(){
             document.getElementById("p5").style.color="yellow";
         });
+        document.getElementById("clk").addEventListener("click",function(){
+            document.getElementById("clk").innerHTML = "clicked";
+        });
+        document.getElementById("dclk").addEventListener("dblclick",function(){
+            document.getElementById("dclk").innerHTML = "dbl clicked";
+        });
+
         
     </script>
 </body>
