@@ -1,0 +1,75 @@
+<!-- WAP to perform CRUD operation on Array using HTML and JavaScript.  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="name">Name : </label>
+    <input type="text" id="name" />
+    <button onclick="addStudent()">ADD</button>
+    <button onclick="updateStudent()">UPDATE</button>
+
+    <br />
+
+    <table border="1">
+      <thead>
+        <td>id</td>
+        <td>Name</td>
+        <td>Action</td>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      let array = [];
+      function display() {
+        let temp = "";
+        for (let i = 0; i < array.length; i++) {
+          temp += `<tr>
+                <td>${i+1}</td>
+                <td>${array[i]}</td>
+                <td><button onclick="editData(${i})">EDIT</button>
+                  <button onclick="deleteData(${i})">DELETE</button>
+                  </td>
+                </tr>`;
+        }
+        document.getElementById("tbody").innerHTML = temp;
+      }
+
+      function addStudent() {
+        sname = document.getElementById("name").value;
+        if (sname == "") {
+            alert("please enter your name");
+            return;
+        }
+        array.push(sname);
+        display();
+        document.getElementById("name").value = "";
+      }
+      function deleteData(i){
+        array.splice(i, 1);
+        display();
+      }
+      let editIndex = -1;
+      function editData(i) {
+        document.getElementById("name").value = array[i];
+        editIndex = i;
+      }
+      function updateStudent() {
+      let sname = document.getElementById("name").value;
+
+      if (sname == "") {
+        alert("Please enter your name");
+        return;
+      }
+
+      array[editIndex] = sname;
+      editIndex = -1;
+      document.getElementById("name").value = "";
+      display();
+  }
+    </script>
+  </body>
+</html>
