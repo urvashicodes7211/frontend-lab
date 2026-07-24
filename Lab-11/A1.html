@@ -1,0 +1,30 @@
+<!--  Demonstrate how to create a class in Java Script. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(name,rno,spi){
+                this.name = name;
+                this.rno = rno;
+                this.spi = spi;
+            }
+            displayInfo(){
+                console.log("Name : "+this.name );
+                console.log("Roll No : ",this.rno );
+                console.log("SPI : ",this.spi );
+            }
+            
+        }
+        const s1 = new Student('Urvashi',351,8.31);
+        s1.displayInfo();
+        const s2 = new Student('Neha',11,8.35);   
+        s2.displayInfo();
+    </script>
+</body>
+</html>
