@@ -1,0 +1,33 @@
+<!-- write a jQuery to slideup, slidedown and slidetoggle image. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #i1{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img src="i1.webp" alt="" id="i1">
+    <button id="myBtn1">SlideUp</button>
+    <button id="myBtn2">SlideDown</button>
+    <button id="myBtn3">SlideToggle</button>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+        $("#myBtn1").click(()=>{
+            $("#i1").slideUp();
+        });
+        $("#myBtn2").click(()=>{
+            $("#i1").slideDown();
+        });
+        $("#myBtn3").click(()=>{
+            $("#i1").slideToggle();
+        });
+    </script>
+</body>
+</html>
