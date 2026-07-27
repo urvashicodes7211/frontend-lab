@@ -1,0 +1,176 @@
+<!--  write a jQuery program to validate complete student registration form.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 400px;
+            margin: auto;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">Student Registration Form</h2>
+
+<form id="regForm">
+
+    Name:
+    <input type="text" id="name">
+    <span class="error" id="nameError"></span>
+
+    Enrollment No:
+    <input type="text" id="enroll">
+    <span class="error" id="enrollError"></span>
+
+    Email:
+    <input type="text" id="email">
+    <span class="error" id="emailError"></span>
+
+    Mobile:
+    <input type="text" id="mobile">
+    <span class="error" id="mobileError"></span>
+
+    Password:
+    <input type="password" id="password">
+    <span class="error" id="passwordError"></span>
+
+    Confirm Password:
+    <input type="password" id="confirm">
+    <span class="error" id="confirmError"></span>
+
+    Gender:<br>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br>
+    <span class="error" id="genderError"></span>
+
+    Branch:
+    <select id="branch">
+        <option value="">Select Branch</option>
+        <option>CE</option>
+        <option>IT</option>
+        <option>CSE</option>
+        <option>EC</option>
+    </select>
+    <span class="error" id="branchError"></span>
+
+    Address:
+    <textarea id="address"></textarea>
+    <span class="error" id="addressError"></span>
+
+    <br>
+
+    <input type="checkbox" id="agree">
+    I Agree Terms & Conditions
+    <br>
+    <span class="error" id="agreeError"></span>
+
+    <br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $("#regForm").submit(function(e){
+
+        e.preventDefault();
+
+        $(".error").text("");
+
+        let valid = true;
+
+        if($("#name").val().trim()==""){
+            $("#nameError").text("Name is required");
+            valid = false;
+        }
+
+        let enroll = $("#enroll").val();
+        let enrollPattern = /^[0-9]{11}$/;
+
+        if(!enrollPattern.test(enroll)){
+            $("#enrollError").text("Enrollment must be 11 digits");
+            valid = false;
+        }
+
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailPattern.test($("#email").val())){
+            $("#emailError").text("Invalid Email");
+            valid = false;
+        }
+
+        let mobilePattern = /^[6-9][0-9]{9}$/;
+
+        if(!mobilePattern.test($("#mobile").val())){
+            $("#mobileError").text("Invalid Mobile Number");
+            valid = false;
+        }
+
+        if($("#password").val().length < 6){
+            $("#passwordError").text("Minimum 6 characters");
+            valid = false;
+        }
+
+        if($("#password").val() != $("#confirm").val()){
+            $("#confirmError").text("Password does not match");
+            valid = false;
+        }
+
+        if(!$("input[name='gender']").is(":checked")){
+            $("#genderError").text("Select Gender");
+            valid = false;
+        }
+
+        if($("#branch").val()==""){
+            $("#branchError").text("Select Branch");
+            valid = false;
+        }
+
+        if($("#address").val().trim()==""){
+            $("#addressError").text("Enter Address");
+            valid = false;
+        }
+
+        if(!$("#agree").is(":checked")){
+            $("#agreeError").text("Accept Terms & Conditions");
+            valid = false;
+        }
+
+        if(valid){
+            alert("Registration Successful");
+        }
+
+    });
+
+});
+
+</script>
+</body>
+</html>
