@@ -7,7 +7,9 @@
 // import Ternary from './lab-16/Ternary'
 // import A1 from './lab-17/A1'
 
-import A3 from "./lab-17/A3"
+import A2 from "./lab-17/A2"
+
+// import A3 from "./lab-17/A3"
 
 // import A1 from "./lab-17/A1"
 
@@ -22,7 +24,8 @@ function App() {
       <Ternary/>
       <And/> */}
       {/* <A1/> */}
-      <A3/>
+      {/* <A3/> */}
+      <A2/>
     </>
   )
 }
