@@ -1,0 +1,322 @@
+<!-- Perform CRUD operation on a static array with FirstName, LastName, Age, Semester, RollNumber, 
+ImagePath etc.. Fields using jQuery  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student CRUD - jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 180px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #addBtn {
+            background: green;
+            color: white;
+        }
+
+        .editBtn {
+            background: orange;
+            color: white;
+        }
+
+        .deleteBtn {
+            background: red;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 25px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #222;
+            color: white;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student CRUD using jQuery</h2>
+
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="number" id="age" placeholder="Age">
+    <input type="number" id="semester" placeholder="Semester">
+    <input type="number" id="rollNumber" placeholder="Roll Number">
+    <input type="text" id="imagePath" placeholder="Image URL">
+
+    <br>
+
+    <button id="addBtn">Add Student</button>
+    <button id="updateBtn" style="display:none;">Update Student</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Semester</th>
+                <th>Roll Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable"></tbody>
+    </table>
+
+</div>
+
+
+<script>
+
+    // STATIC ARRAY
+    let students = [
+        {
+            id: 1,
+            firstName: "Rahul",
+            lastName: "Patel",
+            age: 20,
+            semester: 3,
+            rollNumber: 101,
+            imagePath: "https://i.pravatar.cc/100?img=1"
+        },
+        {
+            id: 2,
+            firstName: "Priya",
+            lastName: "Shah",
+            age: 21,
+            semester: 4,
+            rollNumber: 102,
+            imagePath: "https://i.pravatar.cc/100?img=2"
+        },
+        {
+            id: 3,
+            firstName: "Mehul",
+            lastName: "Dave",
+            age: 20,
+            semester: 3,
+            rollNumber: 103,
+            imagePath: "https://i.pravatar.cc/100?img=3"
+        }
+    ];
+
+    let editId = null;
+
+    function displayStudents() {
+
+        $("#studentTable").empty();
+
+        $.each(students, function(index, student) {
+
+            $("#studentTable").append(`
+                <tr>
+                    <td>
+                        <img src="${student.imagePath}" alt="Student">
+                    </td>
+
+                    <td>${student.firstName}</td>
+
+                    <td>${student.lastName}</td>
+
+                    <td>${student.age}</td>
+
+                    <td>${student.semester}</td>
+
+                    <td>${student.rollNumber}</td>
+
+                    <td>
+                        <button class="editBtn"
+                            onclick="editStudent(${student.id})">
+                            Edit
+                        </button>
+
+                        <button class="deleteBtn"
+                            onclick="deleteStudent(${student.id})">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `);
+
+        });
+    }
+
+    $("#addBtn").click(function() {
+
+        let student = {
+
+            id: students.length > 0
+                ? students[students.length - 1].id + 1
+                : 1,
+
+            firstName: $("#firstName").val(),
+            lastName: $("#lastName").val(),
+            age: $("#age").val(),
+            semester: $("#semester").val(),
+            rollNumber: $("#rollNumber").val(),
+            imagePath: $("#imagePath").val()
+        };
+
+
+        if (
+            student.firstName === "" ||
+            student.lastName === "" ||
+            student.age === "" ||
+            student.semester === "" ||
+            student.rollNumber === "" ||
+            student.imagePath === ""
+        ) {
+            alert("Please fill all fields");
+            return;
+        }
+
+
+        students.push(student);
+
+        displayStudents();
+
+        clearForm();
+
+        alert("Student Added Successfully");
+
+    });
+
+    function deleteStudent(id) {
+
+        if (confirm("Are you sure you want to delete this student?")) {
+
+            students = students.filter(function(student) {
+                return student.id !== id;
+            });
+
+            displayStudents();
+
+            alert("Student Deleted Successfully");
+        }
+    }
+
+    function editStudent(id) {
+
+        let student = students.find(function(student) {
+            return student.id === id;
+        });
+
+
+        if (student) {
+
+            editId = id;
+
+            $("#firstName").val(student.firstName);
+            $("#lastName").val(student.lastName);
+            $("#age").val(student.age);
+            $("#semester").val(student.semester);
+            $("#rollNumber").val(student.rollNumber);
+            $("#imagePath").val(student.imagePath);
+
+            $("#addBtn").hide();
+            $("#updateBtn").show();
+        }
+    }
+
+    $("#updateBtn").click(function() {
+
+        let student = students.find(function(student) {
+            return student.id === editId;
+        });
+
+
+        if (student) {
+
+            student.firstName = $("#firstName").val();
+            student.lastName = $("#lastName").val();
+            student.age = $("#age").val();
+            student.semester = $("#semester").val();
+            student.rollNumber = $("#rollNumber").val();
+            student.imagePath = $("#imagePath").val();
+
+            displayStudents();
+
+            clearForm();
+
+            $("#addBtn").show();
+            $("#updateBtn").hide();
+
+            editId = null;
+
+            alert("Student Updated Successfully");
+        }
+
+    });
+
+
+    
+    function clearForm() {
+
+        $("#firstName").val("");
+        $("#lastName").val("");
+        $("#age").val("");
+        $("#semester").val("");
+        $("#rollNumber").val("");
+        $("#imagePath").val("");
+    }
+
+    displayStudents();
+
+</script>
+
+</body>
+</html>
