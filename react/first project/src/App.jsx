@@ -7,6 +7,8 @@
 // import Ternary from './lab-16/Ternary'
 // import A1 from './lab-17/A1'
 
+import A1 from "./lab-21/A1"
+
 // import A4 from "./lab-17/A4"
 
 // import A2 from "./lab-17/A2"
@@ -15,12 +17,12 @@
 
 // import A1 from "./lab-17/A1"
 
-import {BrowserRouter ,Routes ,Route} from "react-router-dom"
-import Home from "./lab-20/A2/Home"
-import Contact from "./lab-20/A2/Contact"
-import Test from "./lab-20/A2/Test"
-import Login from "./lab-20/A2/Login"
-import About from "./lab-20/A2/About"
+// import {BrowserRouter ,Routes ,Route} from "react-router-dom"
+// import Home from "./lab-20/A2/Home"
+// import Contact from "./lab-20/A2/Contact"
+// import Test from "./lab-20/A2/Test"
+// import Login from "./lab-20/A2/Login"
+// import About from "./lab-20/A2/About"
 
 function App() {
   return (
@@ -37,7 +39,7 @@ function App() {
       {/* <A2/> */}
       {/* <A4/> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home/>}/>
@@ -46,7 +48,9 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/about" element={<About/>}/>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <A1/>
     </>
   )
 }
