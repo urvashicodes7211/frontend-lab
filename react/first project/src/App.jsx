@@ -7,9 +7,13 @@
 // import Ternary from './lab-16/Ternary'
 // import A1 from './lab-17/A1'
 
+import A from "./lab-18/A1/A"
+
+import React , {useState} from "react";
+
 // import A2 from "./lab-21/A2"
 
-import A1 from "./lab-21/A1"
+// import A1 from "./lab-21/A1"
 
 // import A4 from "./lab-17/A4"
 
@@ -27,6 +31,7 @@ import A1 from "./lab-21/A1"
 // import About from "./lab-20/A2/About"
 
 function App() {
+  const [name,setName] = useState("");
   return (
     <>
       {/* <h1>hello world</h1>
@@ -52,8 +57,11 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <A1/>
+      {/* <A1/> */}
       {/* <A2/> */}
+      
+      <h1>Drilling</h1>
+      <A name={name} setName={setName}/>
     </>
   )
 }
