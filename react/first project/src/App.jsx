@@ -10,7 +10,7 @@
 // import A from "./lab-18/A1/A"
 
 import React , {useState} from "react";
-import A from "./lab-18/A2/A";
+import A from "./lab-18/B2/A";
 
 // import A2 from "./lab-21/A2"
 
