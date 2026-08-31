@@ -10,7 +10,8 @@
 // import A from "./lab-18/A1/A"
 
 import React , {useState} from "react";
-import A from "./lab-18/B2/A";
+import AppContain from "./lab-19/appContain";
+// import A from "./lab-18/B2/A";
 
 // import A2 from "./lab-21/A2"
 
@@ -61,9 +62,11 @@ function App() {
       {/* <A1/> */}
       {/* <A2/> */}
       
-      <h1>Drilling</h1>
+      {/* <h1>Drilling</h1> */}
       {/* <A name={name} setName={setName}/> */}
-      <A name={name} setName={setName}/>
+      {/* <A name={name} setName={setName}/> */}
+
+      <AppContain/>
     </>
   )
 }
